@@ -14,6 +14,7 @@ module.exports = {
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.bndkt.expo-mre",
+    // Build runs fine it the following is removed
     entitlements: {
       "com.apple.security.application-groups": ["group.com.bndkt.expo-mre"],
     },
