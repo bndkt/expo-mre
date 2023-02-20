@@ -14,6 +14,9 @@ module.exports = {
   ios: {
     supportsTablet: true,
     bundleIdentifier: "com.bndkt.expo-mre",
+    entitlements: {
+      "com.apple.security.application-groups": ["group.com.bndkt.expo-mre"],
+    },
   },
   android: {
     adaptiveIcon: {
