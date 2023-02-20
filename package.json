@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "update": "pnpm update -i -r -L",
-    "build:local": "eas build -e production -p ios --local --non-interactive",
+    "build:local": "eas build -e production -p ios --local",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
