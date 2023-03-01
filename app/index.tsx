@@ -1,27 +1,25 @@
-import { useLocalSearchParams, useSearchParams } from "expo-router";
+import { Link } from "expo-router";
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import EditScreenInfo from "../components/EditScreenInfo";
+import { Text, View } from "../components/Themed";
 
-export default function TabOneScreen() {
-  console.log(
-    "TabOneScreen",
-    "useSearchParams",
-    useSearchParams(),
-    "useLocalSearchParams",
-    useLocalSearchParams()
-  );
-
+export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Index</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="app/[tabs]/index.tsx" />
+      <Link style={{ color: "red", marginBottom: 30 }} href="/singapore">
+        Singapore
+      </Link>
+      <Link style={{ color: "red", marginBottom: 30 }} href="/two">
+        Two
+      </Link>
+      <EditScreenInfo path="app/index.tsx" />
     </View>
   );
 }
