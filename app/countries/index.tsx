@@ -1,23 +1,26 @@
 import { Link } from "expo-router";
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+import EditScreenInfo from "../../components/EditScreenInfo";
+import { Text, View } from "../../components/Themed";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Index</Text>
+      <Text style={styles.title}>Countries/Index</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <Link style={{ color: "red", marginBottom: 30 }} href="/countries">
-        Countries (/countries)
+      <Link style={{ color: "red", marginBottom: 30 }} href="/countries/us">
+        United States
       </Link>
-      <Link style={{ color: "red", marginBottom: 30 }} href="/two2">
-        Two (/two2)
+      <Link style={{ color: "red", marginBottom: 30 }} href="/countries/de">
+        Germany
+      </Link>
+      <Link style={{ color: "red", marginBottom: 30 }} href="/countries/sg">
+        Singapore
       </Link>
       <EditScreenInfo path="app/index.tsx" />
     </View>

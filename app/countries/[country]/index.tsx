@@ -1,17 +1,20 @@
-import { useLocalSearchParams, useSearchParams } from "expo-router";
-import { StyleSheet } from "react-native";
+import { Link, useLocalSearchParams, useSearchParams } from "expo-router";
+import { useEffect } from "react";
+import { Alert, StyleSheet } from "react-native";
 
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import EditScreenInfo from "../../../components/EditScreenInfo";
+import { Text, View } from "../../../components/Themed";
 
 export default function TabOneScreen() {
-  console.log(
-    "TabOneScreen",
-    "useSearchParams",
-    useSearchParams(),
-    "useLocalSearchParams",
-    useLocalSearchParams()
-  );
+  const { country } = useLocalSearchParams<{ country: string }>();
+
+  useEffect(() => {
+    if (!country) {
+      Alert.alert("No country", "No country", [
+        { text: "OK", onPress: () => console.log("OK Pressed") },
+      ]);
+    }
+  }, [country]);
 
   return (
     <View style={styles.container}>
@@ -21,7 +24,10 @@ export default function TabOneScreen() {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="app/[tabs]/index.tsx" />
+      <EditScreenInfo path="app/countries/[country]/index.tsx" />
+      <Link style={{ color: "red", marginTop: 30 }} href="/two2">
+        Two (../../two2)
+      </Link>
     </View>
   );
 }

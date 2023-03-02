@@ -15,7 +15,7 @@ export default function TabTwoScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
+      <Text style={styles.title}>Stack Two</Text>
       <View
         style={styles.separator}
         lightColor="#eee"

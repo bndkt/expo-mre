@@ -1,8 +1,8 @@
 import { useLocalSearchParams, useSearchParams } from "expo-router";
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import EditScreenInfo from "../../../components/EditScreenInfo";
+import { Text, View } from "../../../components/Themed";
 
 export default function TabTwoScreen() {
   console.log(
@@ -21,7 +21,7 @@ export default function TabTwoScreen() {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="app/[tabs]/two.tsx" />
+      <EditScreenInfo path="app/countries/[country]/two.tsx" />
     </View>
   );
 }
