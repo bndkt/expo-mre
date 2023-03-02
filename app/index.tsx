@@ -16,8 +16,11 @@ export default function Index() {
       <Link style={{ color: "red", marginBottom: 30 }} href="/countries">
         Countries (/countries)
       </Link>
+      <Link style={{ color: "red", marginBottom: 30 }} href="/two">
+        Two (/two)
+      </Link>
       <Link style={{ color: "red", marginBottom: 30 }} href="/two2">
-        Two (/two2)
+        Two2 (/two2)
       </Link>
       <EditScreenInfo path="app/index.tsx" />
     </View>
