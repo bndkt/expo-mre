@@ -25,8 +25,11 @@ export default function TabOneScreen() {
         darkColor="rgba(255,255,255,0.1)"
       />
       <EditScreenInfo path="app/countries/[country]/index.tsx" />
+      <Link style={{ color: "red", marginTop: 30 }} href="/two">
+        Two (/two)
+      </Link>
       <Link style={{ color: "red", marginTop: 30 }} href="/two2">
-        Two (../../two2)
+        Two2 (/two2)
       </Link>
     </View>
   );
