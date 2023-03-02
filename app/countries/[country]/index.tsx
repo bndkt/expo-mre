@@ -6,15 +6,23 @@ import EditScreenInfo from "../../../components/EditScreenInfo";
 import { Text, View } from "../../../components/Themed";
 
 export default function TabOneScreen() {
-  const { country } = useLocalSearchParams<{ country: string }>();
+  const { country } = useSearchParams<{ country: string }>();
+  const { country: localCountry } = useLocalSearchParams<{ country: string }>();
 
   useEffect(() => {
-    if (!country) {
-      Alert.alert("No country", "No country", [
-        { text: "OK", onPress: () => console.log("OK Pressed") },
-      ]);
+    if (!country ?? !localCountry) {
+      Alert.alert(
+        "No country",
+        `TabOneScreen()\n\nCountry: ${country}\nCountry (local): ${localCountry}`,
+        [
+          {
+            text: "OK",
+            onPress: () => console.log("OK Pressed"),
+          },
+        ]
+      );
     }
-  }, [country]);
+  }, [country, localCountry]);
 
   return (
     <View style={styles.container}>

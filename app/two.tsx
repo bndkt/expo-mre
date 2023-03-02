@@ -1,18 +1,9 @@
-import { useLocalSearchParams, useSearchParams } from "expo-router";
 import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 
 export default function TabTwoScreen() {
-  console.log(
-    "TabTwoScreen",
-    "useSearchParams",
-    useSearchParams(),
-    "useLocalSearchParams",
-    useLocalSearchParams()
-  );
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Stack Two</Text>

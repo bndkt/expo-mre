@@ -22,6 +22,9 @@ export default function Index() {
       <Link style={{ color: "red", marginBottom: 30 }} href="/two2">
         Two2 (/two2)
       </Link>
+      <Link style={{ color: "red", marginBottom: 30 }} href="/countries/us/two">
+        (/countries/us/two)
+      </Link>
       <EditScreenInfo path="app/index.tsx" />
     </View>
   );

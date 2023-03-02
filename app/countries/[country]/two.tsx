@@ -1,17 +1,28 @@
-import { useLocalSearchParams, useSearchParams } from "expo-router";
-import { StyleSheet } from "react-native";
+import { Link, useLocalSearchParams, useSearchParams } from "expo-router";
+import { useEffect } from "react";
+import { Alert, StyleSheet } from "react-native";
 
 import EditScreenInfo from "../../../components/EditScreenInfo";
 import { Text, View } from "../../../components/Themed";
 
 export default function TabTwoScreen() {
-  console.log(
-    "TabTwoScreen",
-    "useSearchParams",
-    useSearchParams(),
-    "useLocalSearchParams",
-    useLocalSearchParams()
-  );
+  const { country } = useSearchParams<{ country: string }>();
+  const { country: localCountry } = useLocalSearchParams<{ country: string }>();
+
+  useEffect(() => {
+    if (!country ?? !localCountry) {
+      Alert.alert(
+        "No country",
+        `TabTwoScreen()\n\nCountry: ${country}\nCountry (local): ${localCountry}`,
+        [
+          {
+            text: "OK",
+            onPress: () => console.log("OK Pressed"),
+          },
+        ]
+      );
+    }
+  }, [country, localCountry]);
 
   return (
     <View style={styles.container}>
@@ -22,6 +33,12 @@ export default function TabTwoScreen() {
         darkColor="rgba(255,255,255,0.1)"
       />
       <EditScreenInfo path="app/countries/[country]/two.tsx" />
+      <Link style={{ color: "red", marginTop: 30 }} href="/two">
+        Two (/two)
+      </Link>
+      <Link style={{ color: "red", marginTop: 30 }} href="/two2">
+        Two2 (/two2)
+      </Link>
     </View>
   );
 }
